@@ -1,0 +1,206 @@
+<!-- index.nunjucks -->
+{% extends "layout.html" %}
+<!--TITLE setting-->
+{% block title %}Schedule{% endblock %}
+{% block navigation %}
+{% import 'macros/nav.html' as nav %}
+{{nav.active('schedule')}}
+{% endblock %}
+
+{% block HeadContent %}
+<script>
+    $(document).ready(function () {
+        var slider = tns({
+            container: '#sliderGame',
+            controls: false, //上下則
+            nav: true, //滑點
+            navPosition: "bottom",
+            mouseDrag: true, //拖動更改幻燈片
+            autoplay: true, //自動播放
+            autoplayButtonOutput: false, //自動播放按鈕顯示
+            rewind: false,
+            gutter: 16,
+            responsive: {
+                0: {
+                    items: 1.3
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+<!--<div class="main">-->
+{% block content %}
+
+<div class="page-banner" style="background-image: url(/images/page-banner-schedule.jpg);">
+    <div class="title"><span>Calendar</span> of Events</div>
+</div>
+<div class="page">
+    <div class="container">
+        <div class="page-inner">
+            <div class="filter filterSwitch">
+                <div class="filter-01">
+                </div>
+                <div class="filter-02">
+                    <div class="navLink">
+                        <a href="schedule.html" class="btn btn-link">
+                            <span>View List</span>
+                            <i class="icon-an-list" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="calendar"></div>
+            <div class="calendar-info">
+                <div class="calendar-info-01">
+                    <strong>Today’s Date: </strong>Noveember 16, 2020
+                </div>
+                <div class="calendar-info-02">
+                    <div class="status status-active">
+                        <i class="icon-an-active" aria-hidden="true"></i>
+                        Active
+                    </div>
+                    <div class="status status-upcoming">
+                        <i class="icon-an-upcoming" aria-hidden="true"></i>
+                        Upcoming
+                    </div>
+                    <div class="status status-expired">
+                        <i class="icon-an-expired" aria-hidden="true"></i>
+                        Expired
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Calendar-->
+<div class="modal fade" id="calendarModal" tabindex="-1" role="dialog" aria-labelledby="calendarModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div>close</div>
+        </button>
+        <div class="modal-content modal-calendar modal-calendar-active">
+            <div class="modal-body">
+                <div class="eventHeader">
+                    <div class="eventHeader-img">
+                        <img src="/images/event-highScore.svg">
+                    </div>
+                    <div class="eventHeader-title">Tournament</div>
+                    <div class="eventHeader-titleSub">
+                        Asteroids Delux, Agus, Art of Fighting, Alpha Mission, Gondomania, Dragon Gun, Mark of
+                        The Wolves, Andro Runos
+                    </div>
+                    <div class="eventHeader-date"><strong>Event date: </strong>10/10/2020 through 10/20/2020</div>
+                </div>
+                <div class="sliderGame">
+                    <div id="sliderGame">
+                        <div class="item">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>1</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>2</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>3</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>4</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>5</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="eventInfo">
+                    <div class="eventInfo-title">Join the tournament for a free prize!</div>
+                    <p>The winning team will receive a BitPixel LED marguee! The competition is currently
+                        open. Gather your team and Join Now!</p>
+                    <div class="eventInfo-btn">
+                        <button type="button" class="btn btn-gradient" data-toggle="modal"
+                            data-target="#enterModal">Enter Tournament</button>
+                        <button type="button" class="btn btn-gradient" data-toggle="modal"
+                            data-target="#bracketModal">View bracket</button>
+                        <button type="button" class="btn btn-border" data-toggle="modal" data-target="#alertsModal">
+                            <div>Get Alerts</div>
+                        </button>
+                        <div class="status status-active">
+                            <i class="icon-an-active" aria-hidden="true"></i>Active
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+<script src="/js/calendar.js"></script>
+{% endblock %}

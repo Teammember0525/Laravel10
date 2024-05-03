@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>High Score - ArcadeNet</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.png">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.1.1/jquery.smartmenus.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.1.1/addons/bootstrap-4/jquery.smartmenus.bootstrap-4.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.1.1/addons/keyboard/jquery.smartmenus.keyboard.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    
+<script>
+    $(document).ready(function () {
+        var slider = tns({
+            container: '#sliderGame',
+            controls: false, //上下則
+            nav: true, //滑點
+            navPosition: "bottom",
+            mouseDrag: true, //拖動更改幻燈片
+            autoplay: true, //自動播放
+            autoplayButtonOutput: false, //自動播放按鈕顯示
+            rewind: false,
+            gutter: 16,
+            responsive: {
+                0: {
+                    items: 1.3
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+    });
+</script>
+
+    <script src="/js/script.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/fonts/icons/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
+    <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper" id="top">
+        <header class="header">
+            
+
+
+<nav class="navbar navbar-expand-md">
+    <div class="container">
+
+        <button class="navbar-toggler navbar-toggler-close" id="navbarNavBtnX" type="button" data-toggle="collapse"
+            data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="icon-x" aria-hidden="true"></i>
+        </button>
+
+        <button class="navbar-toggler" id="navbarNavBtn" type="button" data-toggle="collapse"
+            data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="icon-menu" aria-hidden="true"></i>
+        </button>
+
+        <a class="navbar-brand" href="#">
+            <img src="/images/logo.png" alt="ArcadeNet">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="nav navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html">
+                        <i class="icon-an-home" aria-hidden="true"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="device.html">
+                        <i class="icon-an-device" aria-hidden="true"></i>
+                        Device
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#" title="Legends Ultimate">
+                                <i class="icon-an-device" aria-hidden="true"></i>
+                                Legends Ultimate
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" title="Legends Gamer">
+                                <i class="icon-an-gamer" aria-hidden="true"></i>
+                                Legends Gamer
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" title="Legends Flashback">
+                                <i class="icon-an-flashback" aria-hidden="true"></i>
+                                Legends Flashback
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="titles.html">
+                        <i class="icon-an-cartridge" aria-hidden="true"></i>
+                        Titles
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#" title="All Supported Games">
+                                <i class="icon-an-ship" aria-hidden="true"></i>
+                                All Supported Games
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" title="ArcadeNet">
+                                <i class="icon-an-joystick" aria-hidden="true"></i>
+                                ArcadeNet
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" title="Pinball">
+                                <i class="icon-an-pinball" aria-hidden="true"></i>
+                                Pinball
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#" title="Built-In Tables">
+                                        Built-In Tables
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Streaming Tables">
+                                        Streaming Tables
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="#" title="Cloud">
+                                                Cloud
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="Steam">
+                                                Steam
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="All">
+                                                All
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  active ">
+                    <a class="nav-link" href="schedule.html">
+                        <i class="icon-an-calendar" aria-hidden="true"></i>
+                        Schedule
+                    </a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#">
+                        <i class="icon-an-joysticks" aria-hidden="true"></i>
+                        AtGames Family
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="">
+                            <a class="dropdown-item" href="#" title="Legends Arade Family">
+                                <i class="icon-an-ufo" aria-hidden="true"></i>
+                                Legends Arade Family
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="dropdown-item" href="#" title="ArcadeNet">
+                                <i class="icon-an-joystick" aria-hidden="true"></i>
+                                ArcadeNet
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="dropdown-item" href="#" title="BYOG">
+                                <i class="icon-an-jet" aria-hidden="true"></i>
+                                BYOG
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#loginModal" data-toggle="modal">
+                        <i class="icon-an-joystick" aria-hidden="true"></i>
+                        Login/Sign Up
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+        </header>
+        <section class="main">
+            
+
+<div class="page-banner" style="background-image: url(/images/page-banner-schedule.jpg);">
+    <div class="title"><span>Schedule</span> of Events</div>
+</div>
+<div class="page">
+    <div class="container">
+        <div class="page-inner">
+            <div class="tournament">
+                <div class="tournament-header">
+                    <div class="tournament-img">
+                        <img src="/images/event-highScore.svg">
+                    </div>
+                    <div class="tournament-title">High Score</div>
+                </div>
+                <div class="eventInfo">
+                    <div class="eventInfo-title">Join the tournament for a free prize!</div>
+                    <div class="eventInfo-titleSub">Asteroids Delux, Agus, Art of Fighting, Alpha
+                        Mission,
+                        Gondomania, Dragon Gun, Mark of The Wolves, Andro Runos</div>
+                    <p>The winning team will receive a BitPixel LED marguee! The competition is currently
+                        open. Gather your team and Join Now!</p>
+                    <p>10/10/2020 - 10/20/2020 <a href="schedule-calendar.html" class="link-underline">View
+                            Calendar</a></p>
+                    <div class="eventInfo-btn">
+                        <a href="highscore-top50.html" class="btn btn-gradient">Top 50 Scores</a>
+                        <button type="button" class="btn btn-border">
+                            <div>Get Alerts</div>
+                        </button>
+                        <div class="status status-active">
+                            <i class="icon-an-active" aria-hidden="true"></i>Active
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bannerTournament"><span>High Score </span>Leaderboard</div>
+            <div class="listGame">
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        </section>
+        <footer class="footer">
+            <div class="container">
+    <img src="/images/logo.png" alt="ArcadeNet" class="footer-logo">
+    <ul class="footer-link">
+        <li>
+            <a href="index.html" title="Home">Home</a>
+        </li>
+        <li>
+            <a href="privacy.html" title="Privacy Policy">Privacy Policy</a>
+        </li>
+        <li>
+            <a href="terms.html" title="Terms of Use">Terms of Use</a>
+        </li>
+        <li>
+            <a href="corporate.html" title="Corporate">Corporate</a>
+        </li>
+    </ul>
+    <div class="footer-copyright">Copyright: AtGames Cloud Holdings Ltd. All rights reserved. All supported gaming
+        platforms and trademarks are
+        properties of their respective owners.</div>
+</div>
+        </footer>
+    </div>
+    <!-- Modal Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div>close</div>
+            </button>
+            <div class="modal-content">
+                <div class="login">
+                    <div class="login-header">
+                        <h5 class="modal-title" id="loginModalLabel">Log In to get alerts!</h5>
+                        <p>You must Log into your account to get alerts or <a href="#" class="link-underline">create an
+                                account.</a></p>
+                    </div>
+                    <form class="form-sp">
+                        <div class="form-group">
+                            <label for="name">User Name</label>
+                            <div class="input-border">
+                                <input type="text" class="form-control" id="name" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-border">
+                                <input type="password" class="form-control" id="password" placeholder="">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-gradient">Submit</button>
+                        <a href="index.html" class="link-underline forgot">Forgot Password</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-backdrop" id="navbarBackdrop"></div>
+    
+
+</body>
+
+</html>

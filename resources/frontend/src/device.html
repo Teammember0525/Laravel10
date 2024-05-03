@@ -1,0 +1,279 @@
+<!-- index.nunjucks -->
+{% extends "layout.html" %}
+<!--TITLE setting-->
+{% block title %}Device{% endblock %}
+{% block navigation %}
+{% import 'macros/nav.html' as nav %}
+{{nav.active('device')}}
+{% endblock %}
+
+{% block HeadContent %}
+{% endblock %}
+
+<!--<div class="main">-->
+{% block content %}
+
+<div class="page-banner"></div>
+<div class="page">
+    <div class="container">
+        <div class="page-inner">
+            <div class="filter filterDevice">
+                <div class="filter-01">
+                    <div class="navLink">
+                        <a href="#" class="btn btn-link active">
+                            <i class="icon-an-all" aria-hidden="true"></i>
+                            <span>All</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-ultimate" aria-hidden="true"></i>
+                            <span>Ultimate</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-gamer" aria-hidden="true"></i>
+                            <span>Gamer</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-flashback" aria-hidden="true"></i>
+                            <span>Flashback</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-pinball" aria-hidden="true"></i>
+                            <span>Pinball</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="filter-02">
+                    <div class="search">
+                        <div class="input-border">
+                            <input type="text" class="form-control" placeholder="Search Game Title"
+                                aria-label="Search Game Title" aria-describedby="search">
+                        </div>
+                        <button class="btn" type="button" id="search">
+                            <i class="icon-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bannerDevice"><img src="/images/device-all.png" alt="All"></div>
+            <div class="listSearch">
+                <div class="listSearch-title">Search Results</div>
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jasonasonasonasonasonasonason</span>
+                                        <strong>789,456,789,456,789,456,789,456,789,456,789,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+            </div>
+            <div class="filteraz">
+                {% include "filteraz.html" %}
+            </div>
+            <div class="listGame">
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jasonasonasonasonasonasonason</span>
+                                        <strong>789,456,789,456,789,456,789,456,789,456,789,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="game">
+                        <div class="game-border">
+                            <div class="game-inner">
+                                <div class="title">Asteroids Delux</div>
+                                <div class="cover">
+                                    <div class="img-by img-by-5by2">
+                                        <img src="/images/game-cover.jpg" alt="title">
+                                    </div>
+                                </div>
+                                <ul class="board">
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                    <li>
+                                        <span>Jason</span>
+                                        <strong>987,456</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="device-top50.html" title="Top 50 Scores" class="link-underline">Top 50 Scores</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="loadMore">
+            <button type="button" class="btn btn-gradient">Load More</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}

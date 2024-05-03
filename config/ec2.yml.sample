@@ -1,0 +1,8 @@
+project_tag: Project
+roles_tag: Roles
+stages_tag: Stages
+access_key_id: <%= ENV["AWS_ACCESS_KEY_ID"] %>
+secret_access_key: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
+regions:
+  - us-west-1
+

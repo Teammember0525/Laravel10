@@ -1,0 +1,1078 @@
+<!-- index.nunjucks -->
+{% extends "layout.html" %}
+<!--TITLE setting-->
+{% block title %}Schedule{% endblock %}
+{% block navigation %}
+{% import 'macros/nav.html' as nav %}
+{{nav.active('schedule')}}
+{% endblock %}
+
+{% block HeadContent %}
+<script>
+    $(document).ready(function () {
+        var slider = tns({
+            container: '#sliderGame1',
+            controls: false,
+            nav: true,
+            navPosition: "bottom",
+            mouseDrag: true,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            rewind: false,
+            gutter: 16,
+            responsive: {
+                0: {
+                    items: 1.3
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+        var slider = tns({
+            container: '#sliderGame2',
+            controls: false,
+            nav: true,
+            navPosition: "bottom",
+            mouseDrag: true,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            rewind: false,
+            gutter: 16,
+            responsive: {
+                0: {
+                    items: 1.3
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+        var slider = tns({
+            container: '#sliderGame3',
+            controls: false,
+            nav: true,
+            navPosition: "bottom",
+            mouseDrag: true,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            rewind: false,
+            gutter: 16,
+            responsive: {
+                0: {
+                    items: 1.3
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+
+        var slider = tns({
+            container: '#sliderGameFinal',
+            controls: false,
+            nav: true,
+            navPosition: "bottom",
+            mouseDrag: true,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            rewind: false,
+            gutter: 16,
+            responsive: {
+                0: {
+                    items: 1.3
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+
+        var slider = tns({
+            container: '#sliderBracket',
+            controls: true,
+            controlsContainer: "#controlsBracket",
+            nav: false,
+            mouseDrag: true,
+            rewind: true,
+            items: 1
+        });
+    });
+</script>
+{% endblock %}
+
+<!--<div class="main">-->
+{% block content %}
+
+<div class="page-banner" style="background-image: url(/images/page-banner-schedule.jpg);">
+    <div class="title"><span>Schedule</span> of Events</div>
+</div>
+<div class="page">
+    <div class="container">
+        <div class="page-inner">
+            <div class="filter filterSwitch">
+                <div class="filter-01">
+                    <div class="navLink">
+                        <a href="#" class="btn btn-link active">
+                            <i class="icon-an-all" aria-hidden="true"></i>
+                            <span>All</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-active" aria-hidden="true"></i>
+                            <span>Active</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-upcoming" aria-hidden="true"></i>
+                            <span>Upcoming</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-expired" aria-hidden="true"></i>
+                            <span>Expired</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="filter-02">
+                    <div class="navLink">
+                        <a href="schedule-calendar.html" class="btn btn-link">
+                            <span>View Calendar</span>
+                            <i class="icon-an-calendar" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 沒有內容 -->
+            <div class="nocontent">There are no events.</div>
+
+
+            <div class="accordion accordion-event" id="accordionEvent">
+                <div class="card card-active">
+                    <div class="card-header" id="heading1">
+                        <button class="btn btn-border" type="button" data-toggle="collapse" data-target="#collapse1"
+                            aria-expanded="true" aria-controls="collapse1">
+                            <div id="coll">
+                                collapse
+                            </div>
+                        </button>
+                        <div class="eventHeader">
+                            <div class="eventHeader-img">
+                                <img src="/images/event-highScore-w.svg">
+                            </div>
+                            <div class="eventHeader-titleSub">
+                                Asteroids Delux, Agus, Art of Fighting, Alpha Mission, Gondomania, Dragon Gun, Mark of
+                                The Wolves, Andro Runos
+                            </div>
+                            <div class="eventHeader-date"><strong>Event date: </strong>10/10/2020 through 10/20/2020
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionEvent">
+                        <div class="card-body">
+                            <div class="sliderGame">
+                                <div id="sliderGame1">
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>1</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>2</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>3</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>4</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>5</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="eventInfo">
+                                <div class="eventInfo-title">Join the tournament for a free prize!</div>
+                                <div class="eventInfo-titleSub">Asteroids Delux, Agus, Art of Fighting, Alpha
+                                    Mission,
+                                    Gondomania, Dragon Gun, Mark of The Wolves, Andro Runos</div>
+                                <p>The winning team will receive a BitPixel LED marguee! The competition is currently
+                                    open. Gather your team and Join Now!</p>
+                                <p>10/10/2020 - 10/20/2020 <a href="schedule-calendar.html" class="link-underline">View
+                                        Calendar</a></p>
+                                <div class="eventInfo-btn">
+                                    <button type="button" class="btn btn-gradient" data-toggle="modal"
+                                        data-target="#enterModal">Enter Tournament</button>
+                                    <button type="button" class="btn btn-gradient" data-toggle="modal"
+                                        data-target="#bracketModal">View bracket</button>
+                                    <button type="button" class="btn btn-gradient" data-toggle="modal"
+                                        data-target="#resultsModal">Results</button>
+                                    <button type="button" class="btn btn-border" data-toggle="modal"
+                                        data-target="#loginModal">
+                                        <div>Get Alerts</div>
+                                    </button>
+                                    <div class="status status-active">
+                                        <i class="icon-an-active" aria-hidden="true"></i>Active
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="heading2">
+                        <button class="btn btn-border collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            <div id="coll">
+                                View
+                            </div>
+                        </button>
+                        <div class="eventHeader">
+                            <div class="eventHeader-img">
+                                <img src="/images/event-openPlay.svg">
+                            </div>
+                            <div class="eventHeader-titleSub">
+                                Asteroids Delux, Agus, Art of Fighting, Alpha Mission, Gondomania, Dragon Gun, Mark of
+                                The Wolves, Andro Runos
+                            </div>
+                            <div class="eventHeader-date"><strong>Event date: </strong>10/10/2020 through 10/20/2020
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionEvent">
+                        <div class="card-body">
+                            <div class="sliderGame">
+                                <div id="sliderGame2">
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>1</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>2</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>3</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>4</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>5</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="eventInfo">
+                                <div class="eventInfo-title">Join the tournament for a free prize!</div>
+                                <div class="eventInfo-titleSub">Asteroids Delux, Agus, Art of Fighting, Alpha
+                                    Mission,
+                                    Gondomania, Dragon Gun, Mark of The Wolves, Andro Runos</div>
+                                <p>The winning team will receive a BitPixel LED marguee! The competition is currently
+                                    open. Gather your team and Join Now!</p>
+                                <p>10/10/2020 - 10/20/2020 <a href="schedule-calendar.html" class="link-underline">View
+                                        Calendar</a></p>
+                                <div class="eventInfo-btn">
+                                    <button type="button" class="btn btn-gradient" data-toggle="modal"
+                                        data-target="#enterModal">Enter Tournament</button>
+                                    <button type="button" class="btn btn-gradient" data-toggle="modal"
+                                        data-target="#bracketModal">View bracket</button>
+                                    <button type="button" class="btn btn-border" data-toggle="modal"
+                                        data-target="#loginModal">
+                                        <div>Get Alerts</div>
+                                    </button>
+                                    <div class="status status-upcoming">
+                                        <i class="icon-an-upcoming" aria-hidden="true"></i>Upcoming
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="heading3">
+                        <button class="btn btn-border collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            <div id="coll">
+                                View
+                            </div>
+                        </button>
+                        <div class="eventHeader">
+                            <div class="eventHeader-img">
+                                <img src="/images/event-tournament.svg">
+                            </div>
+                            <div class="eventHeader-titleSub">
+                                Asteroids Delux, Agus, Art of Fighting, Alpha Mission, Gondomania, Dragon Gun, Mark of
+                                The Wolves, Andro Runos
+                            </div>
+                            <div class="eventHeader-date"><strong>Event date: </strong>10/10/2020 through 10/20/2020
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionEvent">
+                        <div class="card-body">
+                            <div class="sliderGame">
+                                <div id="sliderGame3">
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>1</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>2</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>3</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>4</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="game">
+                                            <div class="game-border">
+                                                <div class="game-inner">
+                                                    <div class="title"><span>5</span>Asteroids Delux</div>
+                                                    <div class="cover">
+                                                        <div class="img-by img-by-5by2">
+                                                            <img src="/images/game-cover.jpg" alt="title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="eventInfo">
+                                <div class="eventInfo-title">Join the tournament for a free prize!</div>
+                                <div class="eventInfo-titleSub">Asteroids Delux, Agus, Art of Fighting, Alpha
+                                    Mission,
+                                    Gondomania, Dragon Gun, Mark of The Wolves, Andro Runos</div>
+                                <p>The winning team will receive a BitPixel LED marguee! The competition is currently
+                                    open. Gather your team and Join Now!</p>
+                                <p>10/10/2020 - 10/20/2020 <a href="schedule-calendar.html" class="link-underline">View
+                                        Calendar</a></p>
+                                <div class="eventInfo-btn">
+                                    <button type="button" class="btn btn-gradient" data-toggle="modal"
+                                        data-target="#enterModal">Enter Tournament</button>
+                                    <button type="button" class="btn btn-gradient" data-toggle="modal"
+                                        data-target="#bracketModal">View bracket</button>
+                                    <button type="button" class="btn btn-border" data-toggle="modal"
+                                        data-target="#loginModal">
+                                        <div>Get Alerts</div>
+                                    </button>
+                                    <div class="status status-expired">
+                                        <i class="icon-an-expired" aria-hidden="true"></i>Expired
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Enter -->
+<div class="modal fade" id="enterModal" tabindex="-1" role="dialog" aria-labelledby="enterModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div>close</div>
+        </button>
+        <div class="modal-content">
+            <div class="enter">
+                <div class="enter-header">
+                    <h5 class="modal-title" id="loginModalLabel">Create your team!</h5>
+                    <p><strong>your team then view your bracket.</strong> Quis lectus ipsum eu, lectus ac imperdiet
+                        egestas.
+                        Tellus arcu vulputate sollicitudin vestibulum dignissim nulla gravida eget nam enim vitae sit
+                        purus
+                        dui ac sed. </p>
+                </div>
+                <div class="enter-row">
+                    <div class="enter-avatar">
+                        <div class="avatar">
+                            <div class="img-by img-by-1by1">
+                                <img src="/images/avatar-01.svg" alt="title">
+                            </div>
+                        </div>
+                        <a href="#" class="link-underline" data-toggle="modal" data-target="#chooseAvatarModal">Choose
+                            Avatar</a>
+                    </div>
+                    <div class="enter-form">
+                        <form class="form-sp">
+                            <div class="form-group">
+                                <label for="name">Team Name</label>
+                                <div class="input-border">
+                                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend1">Add Friends</label>
+                                <div class="input-border">
+                                    <input type="text" class="form-control" id="friend1" aria-describedby="emailHelp"
+                                        placeholder="Team Member ID">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend2">Add Friends</label>
+                                <div class="input-border">
+                                    <input type="text" class="form-control" id="friend2" aria-describedby="emailHelp"
+                                        placeholder="Team Member ID">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="friend3">Add Friends</label>
+                                <div class="input-border">
+                                    <input type="text" class="form-control" id="friend3" aria-describedby="emailHelp"
+                                        placeholder="Team Member ID">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-gradient">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Choose Avatar -->
+<div class="modal fade" id="chooseAvatarModal" tabindex="-1" role="dialog" aria-labelledby="chooseAvatarModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div>close</div>
+        </button>
+        <div class="modal-content">
+            <div class="chooseAvatar">
+                <div class="chooseAvatar-header">
+                    <h5 class="modal-title" id="loginModalLabel">Choose Avatar</h5>
+                </div>
+                <div class="chooseAvatar-list">
+                    <div class="item">
+                        <input id="radio1" class="radio-button" type="radio" name="radio" />
+                        <label for="radio1" class="radio-tile-label">
+                            <div class="img-by img-by-1by1">
+                                <img src="/images/avatar-01.svg" alt="title">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="radio2" class="radio-button" type="radio" name="radio" />
+                        <label for="radio2" class="radio-tile-label">
+                            <div class="img-by img-by-1by1">
+                                <img src="/images/avatar-01.svg" alt="title">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="radio3" class="radio-button" type="radio" name="radio" />
+                        <label for="radio3" class="radio-tile-label">
+                            <div class="img-by img-by-1by1">
+                                <img src="/images/avatar-01.svg" alt="title">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="radio4" class="radio-button" type="radio" name="radio" />
+                        <label for="radio4" class="radio-tile-label">
+                            <div class="img-by img-by-1by1">
+                                <img src="/images/avatar-01.svg" alt="title">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="radio5" class="radio-button" type="radio" name="radio" />
+                        <label for="radio5" class="radio-tile-label">
+                            <div class="img-by img-by-1by1">
+                                <img src="/images/avatar-01.svg" alt="title">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="radio6" class="radio-button" type="radio" name="radio" />
+                        <label for="radio6" class="radio-tile-label">
+                            <div class="img-by img-by-1by1">
+                                <img src="/images/avatar-01.svg" alt="title">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="radio7" class="radio-button" type="radio" name="radio" />
+                        <label for="radio7" class="radio-tile-label">
+                            <div class="img-by img-by-1by1">
+                                <img src="/images/avatar-01.svg" alt="title">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="chooseAvatar-footer">
+                    <button type="button" class="btn btn-border">
+                        <div>Cancel</div>
+                    </button>
+                    <button type="submit" class="btn btn-gradient">Choose</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal Bracket -->
+<div class="modal fade" id="bracketModal" tabindex="-1" role="dialog" aria-labelledby="bracketModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div>close</div>
+        </button>
+        <div class="modal-content">
+            <div class="bracket">
+                <div class="bracket-header">
+                    <form class="form-sp">
+                        <div class="form-group">
+                            <label for="game">Game</label>
+                            <div class="input-border select selectSp">
+                                <select id="game" class="form-control">
+                                    <option selected>Bracket A</option>
+                                    <option>Bracket B</option>
+                                    <option>Bracket C</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="event">Events</label>
+                            <div class="input-border select">
+                                <select id="event" class="form-control">
+                                    <option selected>Events</option>
+                                    <option>Events</option>
+                                    <option>Events</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="sliderBracket">
+                    <div id="controlsBracket">
+                        <button class="btn-controls btn-controls-left" type="button">
+                            <i class="icon-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn-controls btn-controls-right" type="button">
+                            <i class="icon-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div id="sliderBracket">
+                        <div class="item">
+                            <div class="round">
+                                <div class="round-header">Round 1</div>
+                                <div class="round-body">
+                                    <div class="round-status"><strong>In Progress: </strong>01:38:05</div>
+                                    <div class="round-list line">
+                                        <div class="item">
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            2<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            3<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            2<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            3<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            5<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            6<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            7<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            8<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="round">
+                                <div class="round-header">SEMI-Finals</div>
+                                <div class="round-body">
+                                    <div class="round-status"><strong>In Progress: </strong>01:38:05</div>
+                                    <div class="round-list line">
+                                        <div class="item">
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            1<strong class="winner">YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            2<strong class="loser">YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            1<strong class="winner">YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            2<strong class="loser">YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="round">
+                                <div class="round-header">Finals</div>
+                                <div class="round-body">
+                                    <div class="round-status"><strong>In Progress: </strong>01:38:05</div>
+                                    <div class="round-list">
+                                        <div class="item">
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            1<strong class="winner">YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            2<strong class="loser">YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Results -->
+<div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="resultsModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div>close</div>
+        </button>
+        <div class="modal-content">
+            <div class="modal-btn">
+                <button class="btn btn-border" type="button" id="search">
+                    <div>
+                        <i class="icon-an-bracket" aria-hidden="true"></i>
+                        Bracket
+                    </div>
+                </button>
+            </div>
+            <div class="bannerTournament"><span>Tournament </span> Winners!</div>
+            <div class="bracket">
+                <div class="bracket-header">
+                    <form class="form-sp">
+                        <div class="form-group">
+                            <label for="game">Game</label>
+                            <div class="input-border select selectSp">
+                                <select id="game" class="form-control">
+                                    <option selected>Bracket A</option>
+                                    <option>Bracket B</option>
+                                    <option>Bracket C</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tournamentWinner">
+                    <div class="avatar">
+                        <div class="img-by img-by-1by1">
+                            <img src="/images/avatar-01.svg" alt="title">
+                        </div>
+                    </div>
+                    <div class="tournamentWinner-title">Your Team</div>
+                    <div class="tournamentWinner-list">
+                        <div class="item winner">
+                            <div class="avatar">
+                                <div class="img-by img-by-1by1">
+                                    <img src="/images/avatar-01.svg" alt="title">
+                                </div>
+                            </div>
+                            <div class="item-title">
+                                <div class="item-title-inner">
+                                    1<strong>YOUR TEAM</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item loser">
+                            <div class="avatar">
+                                <div class="img-by img-by-1by1">
+                                    <img src="/images/avatar-01.svg" alt="title">
+                                </div>
+                            </div>
+                            <div class="item-title">
+                                <div class="item-title-inner">
+                                    1<strong>YOUR TEAM</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="listTournament">
+                <div id="sliderGameFinal">
+                    <div class="item">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title"><span>1</span>Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title"><span>2</span>Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title"><span>3</span>Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title"><span>4</span>Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title"><span>5</span>Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tournamentRank deco">
+                <div class="tournamentRank-inner">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Place</th>
+                                <th scope="col">Team Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Your Team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Place</th>
+                                <th scope="col">Team Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Your Team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="export">
+                    <button class="btn btn-border" type="button" id="search">
+                        <div>
+                            <i class="icon-log-out" aria-hidden="true"></i>
+                            Export
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+    $(function () {
+        $('#accordionEvent').collapse({
+            toggle: false
+        })
+    });
+    $(function () { $('#collapse1').collapse('show') });
+    $(function () { $('#collapse2').collapse('toggle') });
+    $(function () { $('#collapse3').collapse('hide') });
+</script>
+{% endblock %}

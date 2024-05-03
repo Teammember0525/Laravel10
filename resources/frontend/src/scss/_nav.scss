@@ -1,0 +1,464 @@
+/* SmartMenus Bootstrap 4 */
+
+/* Carets in collapsible mode (make them look like +/- buttons) */
+.navbar-nav.sm-collapsible .sub-arrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: -0.7em 0.5em 0 0;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: .25rem;
+    padding: 0;
+    width: 2em;
+    height: 1.4em;
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+.navbar-nav.sm-collapsible .sub-arrow::before {
+    content: '+';
+}
+
+.navbar-nav.sm-collapsible .show>a>.sub-arrow::before {
+    content: '-';
+}
+
+.navbar-dark .navbar-nav.sm-collapsible .nav-link .sub-arrow {
+    border-color: rgba(255, 255, 255, .1);
+}
+
+/* make sure there's room for the carets */
+.navbar-nav.sm-collapsible .has-submenu {
+    padding-right: 3em;
+}
+
+/* keep the carets properly positioned */
+.navbar-nav.sm-collapsible .nav-link,
+.navbar-nav.sm-collapsible .dropdown-item {
+    position: relative;
+}
+
+/* Nav carets in expanded mode */
+.navbar-nav:not(.sm-collapsible) .nav-link .sub-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+}
+
+/* point the arrows up for .fixed-bottom navbars */
+.fixed-bottom .navbar-nav:not(.sm-collapsible) .nav-link .sub-arrow,
+.fixed-bottom .navbar-nav:not(.sm-collapsible):not([data-sm-skip]) .dropdown-toggle::after {
+    border-top: 0;
+    border-bottom: .3em solid;
+}
+
+/* Scrolling arrows for tall menus */
+.navbar-nav .scroll-up,
+.navbar-nav .scroll-down {
+    position: absolute;
+    display: none;
+    visibility: hidden;
+    height: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.navbar-nav .scroll-up-arrow,
+.navbar-nav .scroll-down-arrow {
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-top: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid;
+    border-left: 7px solid transparent;
+}
+
+.navbar-nav .scroll-down-arrow {
+    top: 6px;
+    border-top: 7px solid;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid transparent;
+}
+
+/* Add some spacing for 2+ level sub menus in collapsible mode */
+.navbar-nav.sm-collapsible .dropdown-menu .dropdown-menu {
+    margin: .5em;
+}
+
+/* Fix SmartMenus sub menus auto width (subMenusMinWidth/subMenusMaxWidth options) */
+.navbar-nav:not([data-sm-skip]) .dropdown-item {
+    white-space: normal;
+}
+
+.navbar-nav:not(.sm-collapsible) .sm-nowrap>li>.dropdown-item {
+    white-space: nowrap;
+}
+
+
+
+
+
+
+.navbar {
+    &-brand img {
+        width: auto;
+        height: 48px;
+    }
+
+    &-toggler {
+        outline: transparent !important;
+    }
+
+    @include media-breakpoint-down(sm) {
+        .container {
+            justify-content: flex-start;
+        }
+
+        &-toggler {
+            font-size: 2rem;
+            color: $main-color03;
+        }
+
+        &-bg {
+            background: rgba($color: #000, $alpha: 0.7);
+        }
+    }
+
+    @include media-breakpoint-only(md) {
+        .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        &-brand img {
+            height: 64px;
+        }
+    }
+}
+
+.navbar-nav {
+    a {
+        vertical-align: middle;
+
+        i {
+            display: inline-block;
+            font-size: 1.5rem;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+    }
+
+    .sub-menu {
+        display: block !important;
+        list-style: none;
+        padding-left: 2.25rem;
+
+        >li {
+            >a {
+                display: block;
+                padding: 0.25rem 0;
+
+                &:before {
+                    content: "\ea24";
+                    display: inline-block;
+                    font-family: 'icomoon';
+                    color: #fff;
+                    margin-right: 0.25em;
+                }
+
+                &:hover,
+                &:focus {
+                    color: $main-color03;
+                }
+            }
+        }
+
+        .sub-menu {
+            padding-left: 1.25rem;
+        }
+
+        .sub-arrow {
+            display: none !important;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+
+        .nav-item {
+            width: 100%;
+            border-bottom: 1px solid #fff;
+            border-image: linear-gradient(90deg, rgba($color: #fff, $alpha: 0) 0%, rgba($color: #fff, $alpha: 0.3) 50%, rgba($color: #fff, $alpha: 0) 100%) 1;
+
+            .nav-link {
+                @include bold;
+                position: relative;
+                display: block;
+                color: #fff;
+                padding: 1.25rem 1rem;
+
+                i {
+                    margin-right: 0.5rem;
+                }
+
+                .sub-arrow {
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    margin: 0;
+                    border: none;
+                    border-radius: .25rem;
+                    padding: 0;
+                    width: 2em;
+                    height: 1.4em;
+                    font-size: 1.25rem;
+                    line-height: 1.2em;
+                    text-align: center;
+
+                    &:before {
+                        content: '\e936';
+                        font-family: 'icomoon';
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            &.show {
+                .nav-link .sub-arrow::before {
+                    content: '\e937';
+                }
+            }
+
+            &.active .nav-link {
+                background: #000;
+                box-shadow: 4px 4px 16px rgba($color: #000, $alpha: 0.5);
+            }
+        }
+
+        .dropdown-menu {
+            opacity: 0.8;
+            position: inherit;
+            font-size: 1rem;
+            color: #ddd;
+            float: none;
+            background-color: transparent;
+            background-clip: padding-box;
+            padding: 1rem;
+            padding-top: 0;
+            border: none;
+            border-radius: 0;
+
+            >li {
+                display: block;
+
+                >a {
+                    display: inline-block;
+                    color: rgba($color: #fff, $alpha: 0.8);
+                    background: transparent;
+                    padding: 0.5rem 0;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .nav-item {
+            @include bold;
+            position: relative;
+
+            .nav-link {
+                position: relative;
+                display: block;
+                color: #fff;
+                line-height: 1;
+                padding: 0.5rem 0.75rem;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background: $main-color02;
+                    width: 0;
+                    height: 3px;
+                    border-radius: 2px;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover,
+                &:focus {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+
+                .sub-arrow {
+                    display: none;
+                }
+            }
+
+            &.active .nav-link:after {
+                background: $main-color01;
+                width: 100%;
+            }
+
+            &.show .nav-link:after {
+                background: $main-color02;
+                width: 100%;
+            }
+
+            &:not(:last-child) .nav-link i {
+                display: none;
+            }
+        }
+
+        .dropdown-menu {
+            top: 0 !important;
+            left: 50% !important;
+            transform: translateX(-50%);
+            z-index: -1 !important;
+            background: linear-gradient(180deg, rgba($color: #000, $alpha: 0) 24px, rgba($color: #000, $alpha: 0.5) 48px, rgba($color: #000, $alpha: 0.9) 95%);
+            max-width: inherit !important;
+            padding: 48px 1rem 0.5rem;
+            margin: inherit !important;
+            border: 1px solid transparent;
+            border-image: linear-gradient(180deg, rgba($color: #fff, $alpha: 0) 48px, rgba($color: #fff, $alpha: 0.8) 95%) 1;
+            border-width: 0 1px 0 1px;
+            border-radius: 0;
+
+            &::after {
+                content: '';
+                display: block;
+                background: rgba($color: #000, $alpha: 0.9);
+                width: calc(100% + 34px);
+                height: 0.5rem;
+                margin: 0 -17px -1rem;
+                border: 1px solid #fff;
+                border-top-width: 0;
+                border-radius: 0 0 8px 8px;
+            }
+
+            >li {
+                @include regular;
+
+                >a {
+                    display: inline-block;
+                    color: #fff;
+                    white-space: nowrap;
+                    padding: 0.5rem 0;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover,
+                    &:focus {
+                        color: $main-color03;
+                        background: transparent;
+                    }
+
+                    i {
+                        display: inline-block;
+                    }
+
+                    .sub-arrow {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-left: auto;
+    }
+}
+
+.navbar-collapse {
+    @include media-breakpoint-down(sm) {
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(180deg, $main-color04 0%, #D01E8D 100%, );
+        width: 0;
+        height: 100vh;
+        overflow-y: auto;
+
+        &.show {
+            opacity: 1;
+            width: 80%;
+        }
+    }
+}
+
+.navbar-toggler-close {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    padding: 1rem;
+    transition-delay: 0.4s;
+
+    &.open {
+        left: 80%;
+    }
+}
+
+.navbar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    opacity: 0;
+
+    &.show {
+        display: block;
+        opacity: 0.6;
+    }
+}
+
+/*- Header -*/
+.header {
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1035;
+    width: 100%;
+
+    a {
+        display: contents;
+        color: #fff;
+    }
+
+    &.sticky {
+        background: rgba($color: #000, $alpha: 0.8);
+    }
+
+    @include media-breakpoint-up(md) {
+        color: #fff;
+
+        &.sticky {
+            .navbar-brand img {
+                width: auto;
+                height: 32px;
+            }
+        }
+    }
+}

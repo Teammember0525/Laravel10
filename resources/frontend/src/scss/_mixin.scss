@@ -1,0 +1,62 @@
+// title
+@mixin pixeboy {
+    font-family: 'Pixeboy', 'Open Sans 800', sans-serif;
+    line-height: 0.6;
+}
+
+@mixin title-lg {
+    @include pixeboy;
+    font-size: 3.5rem;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 4.5rem;
+    }
+}
+
+@mixin title-md {
+    @include pixeboy;
+    font-size: 3rem;
+}
+
+@mixin title-sm {
+    @include pixeboy;
+    font-size: 2rem;
+}
+
+
+// Open Sans
+@mixin light {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+@mixin regular {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+@mixin bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+@mixin extra-bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+}
+
+
+
+
+
+@mixin list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin text-overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

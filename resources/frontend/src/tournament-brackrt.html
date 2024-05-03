@@ -1,0 +1,242 @@
+<!-- index.nunjucks -->
+{% extends "layout.html" %}
+<!--TITLE setting-->
+{% block title %}Tournament Results{% endblock %}
+{% block navigation %}
+{% import 'macros/nav.html' as nav %}
+{{nav.active('schedule')}}
+{% endblock %}
+
+{% block HeadContent %}
+<script>
+    $(document).ready(function () {
+        var slider = tns({
+            container: '#sliderBracket',
+            controls: true,
+            controlsContainer: "#controlsBracket",
+            nav: false,
+            mouseDrag: true,
+            rewind: true,
+            items: 1
+        });
+
+        var slider = tns({
+            container: '#sliderGameFinal',
+            controls: false,
+            nav: true,
+            navPosition: "bottom",
+            mouseDrag: true,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            rewind: false,
+            gutter: 16,
+            responsive: {
+                0: {
+                    items: 1.3
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+<!--<div class="main">-->
+{% block content %}
+
+<div class="page-banner" style="background-image: url(/images/page-banner-schedule.jpg);">
+    <div class="title"><span>Tournament</span> Results</div>
+</div>
+<div class="page">
+    <div class="container">
+        <div class="page-inner">
+            <div class="tournament">
+                <div class="tournament-header">
+                    <div class="tournament-img">
+                        <img src="/images/event-tournament.svg">
+                    </div>
+                    <div class="tournament-title">Tournament</div>
+                </div>
+                <div class="eventInfo">
+                    <div class="eventInfo-title">Join the tournament for a free prize!</div>
+                    <div class="eventInfo-titleSub">Asteroids Delux, Agus, Art of Fighting, Alpha
+                        Mission,
+                        Gondomania, Dragon Gun, Mark of The Wolves, Andro Runos</div>
+                    <p>The winning team will receive a BitPixel LED marguee! The competition is currently
+                        open. Gather your team and Join Now!</p>
+                    <p>10/10/2020 - 10/20/2020 <a href="schedule-calendar.html" class="link-underline">View
+                            Calendar</a></p>
+                    <div class="eventInfo-btn">
+                        <a href="tournament-complete.html" class="btn btn-gradient">Results</a>
+                        <div class="status status-expired">
+                            <i class="icon-an-expired" aria-hidden="true"></i>Expired
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bannerTournament"><span>Tournament </span> Winners!</div>
+            <div class="bracket">
+                <div class="bracket-header">
+                    <form class="form-sp">
+                        <div class="form-group">
+                            <label for="game">Game</label>
+                            <div class="input-border select selectSp">
+                                <select id="game" class="form-control">
+                                    <option selected>Bracket A</option>
+                                    <option>Bracket B</option>
+                                    <option>Bracket C</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="sliderBracket">
+                    <div id="controlsBracket">
+                        <button class="btn-controls btn-controls-left" type="button">
+                            <i class="icon-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn-controls btn-controls-right" type="button">
+                            <i class="icon-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div id="sliderBracket">
+                        <div class="item">
+                            <div class="round">
+                                <div class="round-header">Round 1</div>
+                                <div class="round-body">
+                                    <div class="round-status"><strong>In Progress: </strong>01:38:05</div>
+                                    <div class="round-list line">
+                                        <div class="item">
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            2<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            3<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            2<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            3<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            5<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            6<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            7<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            8<strong>YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="round">
+                                <div class="round-header">SEMI-Finals</div>
+                                <div class="round-body">
+                                    <div class="round-status"><strong>In Progress: </strong>01:38:05</div>
+                                    <div class="round-list line">
+                                        <div class="item">
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            1<strong class="winner">YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            2<strong class="loser">YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            1<strong class="winner">YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            2<strong class="loser">YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="round">
+                                <div class="round-header">Finals</div>
+                                <div class="round-body">
+                                    <div class="round-status"><strong>In Progress: </strong>01:38:05</div>
+                                    <div class="round-list">
+                                        <div class="item">
+                                            <div class="round-box">
+                                                <div class="round-box-inner">
+                                                    <ul class="round-team">
+                                                        <li>
+                                                            1<strong class="winner">YOUR TEAM</strong>
+                                                        </li>
+                                                        <li>
+                                                            2<strong class="loser">YOUR TEAM</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

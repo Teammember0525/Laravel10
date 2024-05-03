@@ -1,0 +1,228 @@
+<!-- index.nunjucks -->
+{% extends "layout.html" %}
+<!--TITLE setting-->
+{% block title %}Home{% endblock %}
+{% block navigation %}
+{% import 'macros/nav.html' as nav %}
+{{nav.active('index')}}
+{% endblock %}
+
+{% block HeadContent %}
+<script>
+    $(document).ready(function () {
+        var slider = tns({
+            container: '#sliderEvents',
+            controls: true, //上下則
+            controlsContainer: "#controlsEvents",
+            nav: true, //滑點
+            mouseDrag: true, //拖動更改幻燈片
+            autoplay: true, //自動播放
+            autoplayButtonOutput: false, //自動播放按鈕顯示
+            rewind: false,
+            gutter: 16,
+            responsive: {
+                0: {
+                    items: 1.3
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+<!--<div class="main">-->
+{% block content %}
+<section class="index-banner">
+    <div class="index-banner-inner">
+        <div class="caption">
+            <div class="caption-header">Join the Fun!</div>
+            <div class="caption-title">Asteroids DeLuxe Leaderboard Competiion</div>
+            <div class="caption-time">01/21/2021 - 06/21/2021</div>
+        </div>
+    </div>
+</section>
+<section class="index-news">
+    <div class="container">
+        <div class="index-news-inner">
+            <div class="index-events">
+                <h2 class="block-title">Upcoming Events</h2>
+                <div id="sliderEvents">
+                    <div class="item active">
+                        <a href="events-detail.html" title="title" class="item-link">
+                            <div class="cover">
+                                <div class="img-by img-by-5by2">
+                                    <img src="/images/game-cover.jpg" alt="title">
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <div class="title">
+                                    <span>rt123456789</span><span>789,456,789,456,789,456</span>
+                                </div>
+                                <div class="date">
+                                    <span>01/01/2021</span><span>-</span><span>02/01/2021</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="events-detail.html" title="title" class="item-link">
+                            <div class="cover">
+                                <div class="img-by img-by-5by2">
+                                    <img src="/images/game-cover.jpg" alt="title">
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <div class="title">
+                                    <span>rt123</span><span>789,456</span>
+                                </div>
+                                <div class="date">
+                                    <span>01/01/2021</span><span>-</span><span>02/01/2021</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="events-detail.html" title="title" class="item-link">
+                            <div class="cover">
+                                <div class="img-by img-by-5by2">
+                                    <img src="/images/game-cover.jpg" alt="title">
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <div class="title">
+                                    <span>rt123</span><span>789,456</span>
+                                </div>
+                                <div class="date">
+                                    <span>01/01/2021</span><span>-</span><span>02/01/2021</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="events-detail.html" title="title" class="item-link">
+                            <div class="cover">
+                                <div class="img-by img-by-5by2">
+                                    <img src="/images/game-cover.jpg" alt="title">
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <div class="title">
+                                    <span>rt123</span><span>789,456</span>
+                                </div>
+                                <div class="date">
+                                    <span>01/01/2021</span><span>-</span><span>02/01/2021</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="events-detail.html" title="title" class="item-link">
+                            <div class="cover">
+                                <div class="img-by img-by-5by2">
+                                    <img src="/images/game-cover.jpg" alt="title">
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <div class="title">
+                                    <span>rt123</span><span>789,456</span>
+                                </div>
+                                <div class="date">
+                                    <span>01/01/2021</span><span>-</span><span>02/01/2021</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="controlsEvents">
+                    <button class="btn-controls btn-controls-left" type="button">
+                        <i class="icon-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn-controls btn-controls-right" type="button">
+                        <i class="icon-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <!-- <div id="controlsEvents">
+                    <button class="btn-controls btn-controls-left" type="button">
+                        <img src="/images/controls-left.svg">
+                    </button>
+                    <button class="btn-controls btn-controls-right" type="button">
+                        <img src="/images/controls-right.svg">
+                    </button>
+                </div> -->
+            </div>
+            <div class="index-about">
+                <h2 class="block-title">About Us</h2>
+                <p>
+                    AtGames Leagues & Leaderboards™ (ALL) is the premiere even and highscore tracking destination
+                    for the
+                    Legends connected home arcade series of products, including the Legends Ultimate and Legends Gamer.
+                    You
+                    can
+                    see active and upcoming solo and team-based game events, as well as the top ranking - and where you
+                    place -
+                    for a growing selection of legendary games.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="index-join">
+    <div class="container">
+        <div class="index-join-text">
+            <h2 class="block-title block-title-w">
+                <span>How to join the leaderboard</span>
+                Legends Ultimate/gamer
+            </h2>
+            <ul class="list-check">
+                <li>Start a game that shows a trophy icon over the box art</li>
+                <li>Play until you achieve a high score. Press the <strong>“MENU”</strong> button to bring up the
+                    in-game menu.</li>
+                <li>Select <strong>“SAVE HIGH SCORE”</strong> to have your score recognized by the system</li>
+            </ul>
+        </div>
+    </div>
+    <div class="index-join-pic">
+        <img src="/images/index-join-pic.png" alt="How to join the leaderboard">
+    </div>
+</section>
+<section class="index-flashback">
+    <div class="container">
+        <div class="index-flashback-text">
+            <h2 class="block-title block-title-w">Legends Flashback</h2>
+            <ul class="list-check">
+                <li>Start a game that shows a trophy icon over the box art</li>
+                <li>Play until you achieve a high score. Press the <strong>“MENU”</strong> button to bring up the
+                    in-game menu.</li>
+                <li>Select <strong>“SAVE HIGH SCORE”</strong> to have your score recognized by the system</li>
+                <li>Enter the initials you would like displayed with your score</li>
+                <li>Use your mobile device to scan the QR code on the screen</li>
+                <li>Sign into <strong>“Arcade.Net”</strong> go to <strong>“My High Scores”</strong></li>
+                <li>Click the “Upload Score” button then click “Get Code”</li>
+                <li>Enter the 3 letter verification code from your mobile device on your console</li>
+                <li>Use your mobile device to scan the QR code to complete the score submission</li>
+                <li>You will receive a confirmation message on your mobile device</li>
+                <li>Check the results on <strong>“AtGames Legues Leaderboards”</strong></li>
+            </ul>
+        </div>
+        <div class="index-flashback-pic">
+            <img src="/images/index-flashback-pic.png" alt="How to join the leaderboard">
+        </div>
+    </div>
+</section>
+<section class="index-bg">
+    <img src="/images/index-bg.jpg" alt="">
+</section>
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}

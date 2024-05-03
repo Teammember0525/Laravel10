@@ -1,0 +1,179 @@
+<!-- index.nunjucks -->
+{% extends "layout.html" %}
+<!--TITLE setting-->
+{% block title %}Top 50 Scores{% endblock %}
+{% block navigation %}
+{% import 'macros/nav.html' as nav %}
+{{nav.active('device')}}
+{% endblock %}
+
+{% block HeadContent %}
+{% endblock %}
+
+<!--<div class="main">-->
+{% block content %}
+
+<div class="page-banner"></div>
+<div class="page">
+    <div class="container">
+        <div class="page-inner">
+            <div class="filter filterRank">
+                <div class="filter-01">
+                    <div class="navLink">
+                        <a href="#" class="btn btn-link active">
+                            <i class="icon-an-all" aria-hidden="true"></i>
+                            <span>All</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-ultimate" aria-hidden="true"></i>
+                            <span>Ultimate</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-gamer" aria-hidden="true"></i>
+                            <span>Gamer</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-flashback" aria-hidden="true"></i>
+                            <span>Flashback</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-pinball" aria-hidden="true"></i>
+                            <span>Pinball</span>
+                        </a>
+                        <a href="#" class="btn btn-link">
+                            <i class="icon-an-friends" aria-hidden="true"></i>
+                            <span>Friends</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="filter-02">
+                    <button class="btn btn-border" type="button" id="search">
+                        <div>
+                            <i class="icon-chevron-left" aria-hidden="true"></i>
+                            Back
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="bannerRank">
+                <div class="update">
+                    <div class="item">
+                        <span>Top 50 Scores: </span>Last updated 10/20/2020
+                    </div>
+                    <div class="item">
+                        <span>Number of Entries: </span>1,289,675
+                    </div>
+                </div>
+                <div class="topScore">
+                    <div class="topScore-info">
+                        <div class="topScore-title">
+                            <span>Top Score: </span> Jason
+                        </div>
+                        <div class="topScore-day">
+                            <div class="topScore-king">
+                                <i class="icon-an-crown" aria-hidden="true"></i>
+                                King of the Hill <strong> 48 Days</strong>
+                            </div>
+                            <div class="topScore-time">
+                                10/20/2020 00:00 PM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topScore-cover">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title">Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="listRank">
+                <div class="export">
+                    <button class="btn btn-border" type="button" id="search">
+                        <div>
+                            <i class="icon-log-out" aria-hidden="true"></i>
+                            Export
+                        </div>
+                    </button>
+                </div>
+                <div class="navTab">
+                    <div class="navTab-inner">
+                        <a class="active" href="#">All-Time</a>
+                        <a href="#">Monthly</a>
+                        <a href="#">Weekly</a>
+                    </div>
+                </div>
+                <table class="table table-rank">
+                    <thead>
+                        <tr>
+                            <th class="td-01 td-sp" scope="col">Rank</th>
+                            <th class="td-02 td-sp" scope="col">Name</th>
+                            <th class="td-03" scope="col">Name</th>
+                            <th class="td-04" scope="col">Device</th>
+                            <th class="td-05" scope="col">Time</th>
+                            <th class="td-06 td-sp" scope="col">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="rank1">
+                            <td class="td-01 td-sp" scope="row">1</th>
+                            <td class="td-02 td-sp">Jason</td>
+                            <td class="td-03">Jason</td>
+                            <td class="td-04"><i class="icon-an-ultimate" aria-hidden="true"></i></td>
+                            <td class="td-05">10/20/2020 00:00 PM</td>
+                            <td class="td-06 td-sp">785,354</td>
+                        </tr>
+                        <tr class="rank3">
+                            <td class="td-01 td-sp" scope="row">1</th>
+                            <td class="td-02 td-sp">Jason</td>
+                            <td class="td-03">Jason</td>
+                            <td class="td-04"><i class="icon-an-ultimate" aria-hidden="true"></i></td>
+                            <td class="td-05">10/20/2020 00:00 PM</td>
+                            <td class="td-06 td-sp">785,354</td>
+                        </tr>
+                        <tr class="rank3">
+                            <td class="td-01 td-sp" scope="row">1</th>
+                            <td class="td-02 td-sp">Jason</td>
+                            <td class="td-03">Jason</td>
+                            <td class="td-04"><i class="icon-an-ultimate" aria-hidden="true"></i></td>
+                            <td class="td-05">10/20/2020 00:00 PM</td>
+                            <td class="td-06 td-sp">785,354</td>
+                        </tr>
+                        <tr>
+                            <td class="td-01 td-sp" scope="row">1</th>
+                            <td class="td-02 td-sp">Jason</td>
+                            <td class="td-03">Jason</td>
+                            <td class="td-04"><i class="icon-an-ultimate" aria-hidden="true"></i></td>
+                            <td class="td-05">10/20/2020 00:00 PM</td>
+                            <td class="td-06 td-sp">785,354</td>
+                        </tr>
+                        <tr>
+                            <td class="td-01 td-sp" scope="row">1</th>
+                            <td class="td-02 td-sp">Jason</td>
+                            <td class="td-03">Jason</td>
+                            <td class="td-04"><i class="icon-an-ultimate" aria-hidden="true"></i></td>
+                            <td class="td-05">10/20/2020 00:00 PM</td>
+                            <td class="td-06 td-sp">785,354</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="loadMore">
+            <button type="button" class="btn btn-gradient">Load More</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}

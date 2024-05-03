@@ -1,0 +1,198 @@
+stages:
+  - preparation
+  - building
+  - testing
+  - security
+  - deploy
+
+image: edbizarro/gitlab-ci-pipeline-php:7.3
+
+.base_db:
+  services:
+    - mariadb:10.5.8
+  variables:
+    MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    MYSQL_ROOT_PASSWORD: ""
+    MYSQL_USER: root
+    DB_HOST: mariadb
+    MYSQL_DATABASE: laravel
+  before_script:
+    - export APT_CACHE_DIR=`pwd`/apt-cache && mkdir -pv $APT_CACHE_DIR
+    - apt-get update -qq && apt-get -o dir::cache::archives="$APT_CACHE_DIR" install -yqq nodejs
+
+cache:
+  key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+
+composer:
+  stage: preparation
+  script:
+    - php -v
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    - cp .env.example .env
+    - php artisan key:generate
+  artifacts:
+    paths:
+      - vendor/
+      - .env
+    expire_in: 1 days
+    when: always
+  cache:
+    paths:
+      - vendor/
+
+yarn:
+  stage: preparation
+  script:
+    - yarn --version
+    - yarn install --pure-lockfile
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 days
+    when: always
+  cache:
+    paths:
+      - node_modules/
+
+build-assets:
+  # Download the artifacts for these jobs
+  dependencies:
+    - composer
+    - yarn
+  script:
+    - export YARNTASK="$(if ["${CI_COMMIT_BRANCH}" -eq "master"]; then echo "prod"; else echo "dev"; fi)"
+    - echo ${YARNTASK}
+    - yarn --version
+    - yarn run ${YARNTASK}
+  artifacts:
+    paths:
+      - public/css/
+      - public/js/
+      - public/fonts/
+      - public/mix-manifest.json
+    expire_in: 1 days
+    when: always
+  stage: building
+  when: manual
+
+db-seeding:
+  extends: .base_db
+  stage: building
+  dependencies:
+    - composer
+    - yarn
+  script:
+    - mysql --version
+    - php artisan migrate:fresh --seed
+    - mysqldump --host="${DB_HOST}" --user="${MYSQL_USER}"  "${MYSQL_DATABASE}" > db.sql
+  artifacts:
+    paths:
+      - storage/logs # for debugging
+      - db.sql
+    expire_in: 1 days
+    when: always
+  when: manual
+
+phpunit:
+  extends: .base_db
+  stage: testing
+  # Download the artifacts for these jobs
+  dependencies:
+    - composer
+    - build-assets
+    - db-seeding
+  script:
+    - php -v
+    - sudo cp /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.bak
+    - echo "" | sudo tee /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    - mysql --host="${DB_HOST}" --user="${MYSQL_USER}" --password="${MYSQL_PASSWORD}" "${MYSQL_DATABASE}" < db.sql
+    - ./vendor/phpunit/phpunit/phpunit --version
+    - php -d short_open_tag=off ./vendor/phpunit/phpunit/phpunit -v --colors=never --stderr
+    - sudo cp /usr/local/etc/php/conf.d/docker-php-ext-xdebug.bak /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+  artifacts:
+    paths:
+      - ./storage/logs # for debugging
+    expire_in: 1 days
+    when: on_failure
+  when: manual
+
+codestyle:
+  stage: testing
+  allow_failure: true
+  image: lorisleiva/laravel-docker
+  script:
+    - phpcs --extensions=php app
+  dependencies: []
+
+phpcpd:
+  stage: testing
+  script:
+    - test -f phpcpd.phar || curl -L https://phar.phpunit.de/phpcpd.phar -o phpcpd.phar
+    - php phpcpd.phar app/ --min-lines=50
+  dependencies: []
+  cache:
+    paths:
+      - phpcpd.phar
+
+# sensiolabs:
+#   stage: security
+#   script:
+#     - test -d security-checker || git clone https://github.com/sensiolabs/security-checker.git
+#     - cd security-checker
+#     - composer install
+#     - php security-checker security:check ../composer.lock
+#   dependencies: []
+#   cache:
+#     paths:
+#       - security-checker/
+
+.prepare_aws-script:
+  - &aws_config
+    cp config/ec2.yml.sample config/ec2.yml
+
+.deploy: &deploy
+  image: ruby:2.6.5
+  cache:
+    key: retro-anycable
+    paths:
+      - apt-cache/
+      - vendor/ruby
+      - node_modules/
+    policy: pull
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n\n" >> ~/.ssh/config'
+    # - cp config/email.yml.sample config/email.yml
+    - gem install bundler --no-document
+    - bundle install --jobs $(nproc) "${FLAGS[@]}" --path=vendor
+  stage: deploy
+  when: manual
+
+deploy:dev:
+  <<: *deploy
+  only:
+    - develop
+  script:
+    - bundle exec cap dev deploy
+  environment: dev
+
+deploy:qa:
+  <<: *deploy
+  only:
+    - /^release\/.*$/
+  script:
+    - bundle exec cap staging deploy
+  environment: qa
+
+deploy:live:
+  <<: *deploy
+  only:
+    - master
+  script:
+    - *aws_config
+    - bundle exec cap production deploy
+  environment: live

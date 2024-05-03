@@ -1,0 +1,419 @@
+<!-- index.nunjucks -->
+{% extends "layout.html" %}
+<!--TITLE setting-->
+{% block title %}High Score{% endblock %}
+{% block navigation %}
+{% import 'macros/nav.html' as nav %}
+{{nav.active('schedule')}}
+{% endblock %}
+
+{% block HeadContent %}
+<script>
+    $(document).ready(function () {
+        var slider = tns({
+            container: '#sliderGameFinal50',
+            controls: false,
+            nav: true,
+            navPosition: "top",
+            mouseDrag: true,
+            autoplay: false,
+            autoplayButtonOutput: false,
+            rewind: false,
+            gutter: 0,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+<!--<div class="main">-->
+{% block content %}
+
+<div class="page-banner" style="background-image: url(/images/page-banner-schedule.jpg);">
+    <div class="title"><span>Schedule</span> of Events</div>
+</div>
+<div class="page">
+    <div class="container">
+        <div class="page-inner">
+            <div class="tournament">
+                <div class="tournament-header">
+                    <div class="tournament-img">
+                        <img src="/images/event-highScore.svg">
+                    </div>
+                    <div class="tournament-title">High Score</div>
+                </div>
+                <div class="eventInfo">
+                    <div class="eventInfo-title">Join the tournament for a free prize!</div>
+                    <div class="eventInfo-titleSub">Asteroids Delux, Agus, Art of Fighting, Alpha
+                        Mission,
+                        Gondomania, Dragon Gun, Mark of The Wolves, Andro Runos</div>
+                    <p>The winning team will receive a BitPixel LED marguee! The competition is currently
+                        open. Gather your team and Join Now!</p>
+                    <p>10/10/2020 - 10/20/2020 <a href="schedule-calendar.html" class="link-underline">View
+                            Calendar</a></p>
+                    <div class="eventInfo-btn">
+                        <a href="highscore.html" class="btn btn-gradient">Back to Results</a>
+                        <div class="status status-expired">
+                            <i class="icon-an-expired" aria-hidden="true"></i>Expired
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bannerTournament"><span>High Score </span>Top 50</div>
+            <div class="tournamentWinner">
+                <div class="tournamentWinner-title">Your Team</div>
+                <div class="tournamentWinner-game">Dragon Gun Winner!</div>
+            </div>
+            <div class="listTournament50">
+                <div id="sliderGameFinal50">
+                    <div class="item">
+                        <div class="item-game">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>1</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Place</th>
+                                    <th scope="col">Team Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Your Team</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <div class="item-game">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>1</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Place</th>
+                                    <th scope="col">Team Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Your Team</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <div class="item-game">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>1</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Place</th>
+                                    <th scope="col">Team Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Your Team</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <div class="item-game">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>1</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Place</th>
+                                    <th scope="col">Team Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Your Team</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <div class="item-game">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>1</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Place</th>
+                                    <th scope="col">Team Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Your Team</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <div class="item-game">
+                            <div class="game">
+                                <div class="game-border">
+                                    <div class="game-inner">
+                                        <div class="title"><span>1</span>Asteroids Delux</div>
+                                        <div class="cover">
+                                            <div class="img-by img-by-5by2">
+                                                <img src="/images/game-cover.jpg" alt="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Place</th>
+                                    <th scope="col">Team Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Your Team</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Your Team</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="tournamentRank">
+                <div class="tournamentRank-inner">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Place</th>
+                                <th scope="col">Team Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Your Team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Place</th>
+                                <th scope="col">Team Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Your Team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Place</th>
+                                <th scope="col">Team Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Your Team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Place</th>
+                                <th scope="col">Team Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Your Team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="export">
+                    <button class="btn btn-border" type="button" id="search">
+                        <div>
+                            <i class="icon-log-out" aria-hidden="true"></i>
+                            Export
+                        </div>
+                    </button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}

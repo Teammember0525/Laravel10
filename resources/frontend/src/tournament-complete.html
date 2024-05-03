@@ -1,0 +1,261 @@
+<!-- index.nunjucks -->
+{% extends "layout.html" %}
+<!--TITLE setting-->
+{% block title %}Tournament Results{% endblock %}
+{% block navigation %}
+{% import 'macros/nav.html' as nav %}
+{{nav.active('schedule')}}
+{% endblock %}
+
+{% block HeadContent %}
+<script>
+    $(document).ready(function () {
+        var slider = tns({
+            container: '#sliderGameFinal',
+            controls: false,
+            nav: true,
+            navPosition: "bottom",
+            mouseDrag: true,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            rewind: false,
+            gutter: 16,
+            responsive: {
+                0: {
+                    items: 1.3
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+<!--<div class="main">-->
+{% block content %}
+
+<div class="page-banner" style="background-image: url(/images/page-banner-schedule.jpg);">
+    <div class="title"><span>Schedule</span> of Events</div>
+</div>
+<div class="page">
+    <div class="container">
+        <div class="page-inner">
+            <div class="tournament">
+                <div class="tournament-header">
+                    <div class="tournament-img">
+                        <img src="/images/event-tournament.svg">
+                    </div>
+                    <div class="tournament-title">Tournament</div>
+                </div>
+                <div class="eventInfo">
+                    <div class="eventInfo-title">Join the tournament for a free prize!</div>
+                    <div class="eventInfo-titleSub">Asteroids Delux, Agus, Art of Fighting, Alpha
+                        Mission,
+                        Gondomania, Dragon Gun, Mark of The Wolves, Andro Runos</div>
+                    <p>The winning team will receive a BitPixel LED marguee! The competition is currently
+                        open. Gather your team and Join Now!</p>
+                    <p>10/10/2020 - 10/20/2020 <a href="schedule-calendar.html" class="link-underline">View
+                            Calendar</a></p>
+                    <div class="eventInfo-btn">
+                        <a href="tournament-brackrt.html" class="btn btn-gradient">View Brackrt</a>
+                        <div class="status status-expired">
+                            <i class="icon-an-expired" aria-hidden="true"></i>Expired
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bannerTournament"><span>Tournament </span> Winners!</div>
+            <div class="bracket">
+                <div class="bracket-header">
+                    <form class="form-sp">
+                        <div class="form-group">
+                            <label for="game">Game</label>
+                            <div class="input-border select selectSp">
+                                <select id="game" class="form-control">
+                                    <option selected>Bracket A</option>
+                                    <option>Bracket B</option>
+                                    <option>Bracket C</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tournamentWinner">
+                    <div class="avatar">
+                        <div class="img-by img-by-1by1">
+                            <img src="/images/avatar-01.svg" alt="title">
+                        </div>
+                    </div>
+                    <div class="tournamentWinner-title">Your Team</div>
+                    <div class="tournamentWinner-list">
+                        <div class="item winner">
+                            <div class="avatar">
+                                <div class="img-by img-by-1by1">
+                                    <img src="/images/avatar-01.svg" alt="title">
+                                </div>
+                            </div>
+                            <div class="item-title">
+                                <div class="item-title-inner">
+                                    1<strong>YOUR TEAM</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item loser">
+                            <div class="avatar">
+                                <div class="img-by img-by-1by1">
+                                    <img src="/images/avatar-01.svg" alt="title">
+                                </div>
+                            </div>
+                            <div class="item-title">
+                                <div class="item-title-inner">
+                                    1<strong>YOUR TEAM</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="listTournament">
+                <div id="sliderGameFinal">
+                    <div class="item">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title"><span>1</span>Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title"><span>2</span>Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title"><span>3</span>Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title"><span>4</span>Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="game">
+                            <div class="game-border">
+                                <div class="game-inner">
+                                    <div class="title"><span>5</span>Asteroids Delux</div>
+                                    <div class="cover">
+                                        <div class="img-by img-by-5by2">
+                                            <img src="/images/game-cover.jpg" alt="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tournamentRank deco">
+                <div class="tournamentRank-inner">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Place</th>
+                                <th scope="col">Team Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Your Team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Place</th>
+                                <th scope="col">Team Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Your Team</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Your Team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="export">
+                    <button class="btn btn-border" type="button" id="search">
+                        <div>
+                            <i class="icon-log-out" aria-hidden="true"></i>
+                            Export
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
